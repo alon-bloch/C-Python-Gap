@@ -1,0 +1,63 @@
+STEP-BY-STEP POINTER VISUALIZATION (Bubble Sort)
+==============================================
+
+Initial Array: ["Dan", "Alice", "Charlie"]
+Base Address: 0x1000 | Struct Size: 64 bytes
+
+[0x1000] "Dan"
+[0x1040] "Alice"
+[0x1080] "Charlie"
+[0x10C0] [END BOUNDARY]
+
+-----------------------------------------------------------
+PASS 1: current = 0x1000 (points to Alice/Dan area)
+-----------------------------------------------------------
+
+Inner Step 1.1:
+  cur     (0x1000) -> "Dan"
+  cur + 1 (0x1040) -> "Alice"
+  ACTION: Comparison "Dan" vs "Alice"
+  DECISION: "Dan" > "Alice" -> SWAP!
+
+  [Memory View After Swap]:
+  0x1000: "Alice" (cur)
+  0x1040: "Dan"   (cur + 1)
+  0x1080: "Charlie"
+
+Inner Step 1.2:
+  cur     (0x1040) -> "Dan"
+  cur + 1 (0x1080) -> "Charlie"
+  ACTION: Comparison "Dan" vs "Charlie"
+  DECISION: "Dan" > "Charlie" -> SWAP!
+
+  [Memory View After Swap]:
+  0x1000: "Alice"
+  0x1040: "Charlie" (cur)
+  0x1080: "Dan"     (cur + 1)
+
+-----------------------------------------------------------
+PASS 2: current = 0x1040
+-----------------------------------------------------------
+
+Inner Step 2.1:
+  cur     (0x1000) -> "Alice"
+  cur + 1 (0x1040) -> "Charlie"
+  ACTION: Comparison "Alice" vs "Charlie"
+  DECISION: Sorted -> NO SWAP.
+
+Inner Step 2.2:
+  cur     (0x1040) -> "Charlie"
+  cur + 1 (0x1080) -> "Dan"
+  ACTION: Comparison "Charlie" vs "Dan"
+  DECISION: Sorted -> NO SWAP.
+
+-----------------------------------------------------------
+FINAL STATE
+-----------------------------------------------------------
+All passes complete.
+[0x1000] "Alice"
+[0x1040] "Charlie"
+[0x1080] "Dan"
+
+The pointers moved, the data in the addresses changed, 
+but the addresses (0x1000, 0x1040, 0x1080) are fixed locations.

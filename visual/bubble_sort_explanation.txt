@@ -1,0 +1,50 @@
+BUBBLE SORT POINTER VISUALIZATION (EDUCATIONAL)
+==============================================
+
+Initial State: ["Dan", "Alice", "Charlie"]
+Struct Size: 64 bytes
+
+Memory Addresses:
+[0x1000] Dan     <-- start, current, cur
+[0x1040] Alice   <-- cur + 1
+[0x1080] Charlie
+[0x10C0] Boundary <-- end
+
+----------------------------------------------
+PASS 1 (current = 0x1000)
+----------------------------------------------
+
+STEP 1.1: Compare Dan (0x1000) and Alice (0x1040)
+Result: strcmp("Dan", "Alice") > 0  => TRIGGER SWAP
+
+SWAP LOGIC:
+  BusLine temp = *0x1040 (Alice)
+  *0x1040 = *0x1000 (Dan)
+  *0x1000 = temp (Alice)
+
+State after Step 1.1: ["Alice", "Dan", "Charlie"]
+
+STEP 1.2: Compare Dan (0x1040) and Charlie (0x1080)
+Result: strcmp("Dan", "Charlie") > 0 => TRIGGER SWAP
+
+State after Step 1.2: ["Alice", "Charlie", "Dan"]
+
+----------------------------------------------
+PASS 2 (current = 0x1040)
+----------------------------------------------
+
+STEP 2.1: Compare Alice (0x1000) and Charlie (0x1040)
+Result: No swap.
+
+STEP 2.2: Compare Charlie (0x1040) and Dan (0x1080)
+Result: No swap.
+
+----------------------------------------------
+FINAL SORTED STATE:
+[0x1000] Alice
+[0x1040] Charlie
+[0x1080] Dan
+
+POINTER ARITHMETIC RULE:
+(cur + 1) = cur + (1 * sizeof(BusLine))
+0x1000 + 64 = 0x1040

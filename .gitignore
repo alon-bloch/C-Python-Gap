@@ -1,0 +1,27 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# Compiled C binaries / shared libraries
+*.so
+*.dll
+*.dylib
+*.o
+*.obj
+*.a
+*.lib
+bus_app
+
+# Editor configurations & OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp

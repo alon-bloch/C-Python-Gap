@@ -1,0 +1,53 @@
+POINTER MEMORY MAP - sort_bus_lines.c
+====================================
+
+1. BUBBLE SORT (bus_bubble_sort)
+--------------------------------
+* start (BusLine*): 
+    The anchor point. It holds the address of the very first bus line in the array.
+* end (BusLine*): 
+    The boundary marker. Points to the memory address immediately AFTER the last bus. 
+    It is used to prevent the loops from accessing invalid memory.
+* current (BusLine*): 
+    The "Pass Tracker". It starts at 'start' and moves forward by one BusLine (64 bytes) 
+    after each full inner loop pass. It ensures the algorithm runs enough times.
+* cur (BusLine*): 
+    The "Comparison Runner". It moves through the array in each pass, 
+    comparing the data at its current address with the data at (cur + 1).
+
+2. QUICK SORT (bus_quick_sort)
+------------------------------
+* start (BusLine*): 
+    The start of the current "sub-section" being sorted.
+* end (BusLine*): 
+    The end boundary of the current sub-section.
+* pivot (BusLine*): 
+    After partitioning, this pointer holds the address of the element that is 
+    now in its final, correct sorted position. It is used to split the array 
+    into two smaller halves for recursion.
+
+3. PARTITIONING (partition)
+---------------------------
+* start (BusLine*): 
+    The beginning of the range to be partitioned.
+* end (BusLine*): 
+    The end of the range.
+* pivot (BusLine*): 
+    In this code, it points to (end - 1). This is the "Benchmark" element. 
+    We compare everything else to the data at this address.
+* small (BusLine*): 
+    The "Boundary Keeper". It points to the next available slot where 
+    an element smaller than the pivot should be placed. 
+    It "guards" the sorted sub-partition on the left.
+* current (BusLine*): 
+    The "Scanner". It iterates from start to (end - 1), checking 
+    each bus line to see if it belongs to the left (smaller) or right (larger) 
+    side of the 'small' boundary.
+
+SUMMARY OF POINTER ARITHMETIC
+-----------------------------
+In all these functions, "Pointer + 1" means: 
+Address + (1 * sizeof(BusLine))
+
+This allows the logic to treat complex memory structures as simple, 
+consecutive cells, which is the core strength of C pointers.

@@ -1,0 +1,44 @@
+PARTITIONING VISUALIZATION (Quick Sort - Distance)
+================================================
+
+Initial Array: [Charlie (800), Dan (500), Alice (200)]
+Addresses: 0x1000, 0x1040, 0x1080
+
+Step 0: Setup
+-------------
+* pivot   points to 0x1080 (Alice: 200) - This is our benchmark!
+* small   points to 0x1000 (Charlie)
+* current points to 0x1000 (Charlie)
+
+Step 1: current = 0x1000 (Charlie: 800)
+---------------------------------------
+Action: Compare current (800) vs pivot (200).
+Result: 800 > 200 -> NO SWAP.
+small   remains at 0x1000.
+current moves to 0x1040.
+
+Step 2: current = 0x1040 (Dan: 500)
+---------------------------------------
+Action: Compare current (500) vs pivot (200).
+Result: 500 > 200 -> NO SWAP.
+small   remains at 0x1000.
+current moves to 0x1080. (Loop Ends)
+
+Step 3: Final Pivot Swap
+------------------------
+The loop is done. Now we must put the pivot (Alice) into its correct place.
+Action: Swap data at *small (0x1000: Charlie) with data at *pivot (0x1080: Alice).
+
+[Memory View After Final Swap]:
+0x1000: Alice (200)   <-- small (Correctly placed!)
+0x1040: Dan (500)
+0x1080: Charlie (800) <-- former pivot location
+
+Return Value: Pointer to 0x1000.
+
+Summary of Logic:
+-----------------
+The 'current' pointer scanned the array looking for anything smaller than the pivot.
+The 'small' pointer waited at the front to receive those smaller elements.
+Since everything was larger than Alice, 'small' never moved, and Alice was 
+swapped into the very first position at the end.
