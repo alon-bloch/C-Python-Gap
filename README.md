@@ -56,6 +56,7 @@ HTML/CSS/JavaScript	Interactive frontend
 GCC	Shared library compilation
 
 📁 Project Structure
+
 .
 ├── sort_bus_lines.c/h      # Core C sorting logic
 ├── main.c                  # Original CLI application
