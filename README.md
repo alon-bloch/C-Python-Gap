@@ -3,6 +3,16 @@ A hybrid C-Python system for implementing, managing, and visualizing sorting alg
 
 This project combines low-level C programming, Python interoperability, and a Flask-based visualization interface to create an interactive educational and algorithm-analysis platform.
 
+The project began as a university assignment focused on implementing sorting algorithms in C, and later evolved into a full hybrid C-Python system with an interactive visualization layer.
+
+The goal was not only to implement sorting algorithms, but also to explore:
+- low-level memory manipulation,
+- Python-C interoperability,
+- algorithm visualization,
+- and modular software design.
+
+The project combines systems programming concepts with practical tooling and interactive visualization.
+
 🚀 Features
 Core Algorithm Engine (C)
 Implemented Bubble Sort and Quick Sort in C
@@ -59,3 +69,6 @@ GCC	Shared library compilation
 │   └── static/             # CSS & JavaScript assets
 │
 └── README.md
+
+
+https://github.com/alon-bloch/C-Python-Gap
