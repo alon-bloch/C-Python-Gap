@@ -60,17 +60,27 @@ GCC	Shared library compilation
 .
 
 ├── sort_bus_lines.c/h      # Core C sorting logic
+
 ├── main.c                  # Original CLI application
+
 ├── test_bus_lines.c/h      # C unit/integration tests
+
 ├── libbus.so               # Compiled shared library
+
 │
 ├── python_bridge/
+
 │   ├── bus_manager.py      # Python-C integration layer
+
 │   └── test_bus_final.py   # Python integration tests
+
 │
 ├── visual/
+
 │   ├── gui_app.py          # Flask visualization server
+
 │   ├── templates/          # HTML templates
+
 │   └── static/             # CSS & JavaScript assets
 │
 └── README.md
