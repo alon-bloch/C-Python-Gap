@@ -1,57 +1,61 @@
-# Bus Sorting System & Visualizer
-**Contest Participation: I would like to take part in the sorting competition.**
+🚌 Bus Sorting System & Visualizer
+A hybrid C-Python system for implementing, managing, and visualizing sorting algorithms on bus-line datasets.
 
-A hybrid C-Python system for managing and visualizing bus line sorting algorithms. This project integrates legacy C sorting logic with a modern, secure Python interface and a high-end web-based visualization tool.
+This project combines low-level C programming, Python interoperability, and a Flask-based visualization interface to create an interactive educational and algorithm-analysis platform.
 
-## i. Implemented Features
-*   **C Core**: Implementation of `Bubble Sort` (lexicographical) and `Quick Sort` (numerical) using pointer arithmetic.
-*   **Pointer-Based Logic**: Direct memory manipulation consistent with low-level C management.
-*   **Input Validation**: Robust C utility to ensure data integrity.
-
-## ii. Extensions & Enhancements
-*   **Modern Web GUI**: A Flask-based dashboard with:
-    *   **Real-time Pointer Tracking**: Visual simulation of `cur`, `next`, `pivot`, and `small` pointers.
-    *   **Swap Animations**: Smooth CSS transitions for swap operations.
-    *   **Performance Metrics**: Tracking comparisons, swaps, and execution time.
-    *   **Aborted Bubble Sort**: Optimized variant for early exit.
-*   **Security Hardening**: Patched buffer overflows (sscanf), XSS protection, and DoS mitigation.
-
-## iii. Project Structure
-```text
+🚀 Features
+Core Algorithm Engine (C)
+Implemented Bubble Sort and Quick Sort in C
+Used pointer arithmetic and direct memory manipulation
+Added robust input-validation utilities
+Designed low-level sorting logic for performance and correctness
+Python Integration Layer
+Built a Python-C bridge using ctypes
+Enabled Python-based orchestration of native C sorting functions
+Added automated integration testing and execution management
+Interactive Visualization Dashboard
+Developed a Flask-based web interface for algorithm visualization
+Added real-time pointer tracking:
+cur
+next
+pivot
+small
+Implemented animated swap visualization using JavaScript and CSS
+Displayed execution metrics:
+comparisons
+swaps
+execution time
+🧠 Technical Concepts Demonstrated
+Low-level memory management
+Pointer arithmetic
+Sorting algorithms
+Python-C interoperability
+Backend development with Flask
+Automated testing
+Algorithm visualization
+Input validation and defensive programming
+🛠️ Technologies Used
+Technology	Purpose
+C	Core sorting engine
+Python	Integration & orchestration
+Flask	Web visualization backend
+ctypes	Python-C bridge
+HTML/CSS/JavaScript	Interactive frontend
+GCC	Shared library compilation
+📁 Project Structure
 .
 ├── sort_bus_lines.c/h      # Core C sorting logic
-├── main.c                  # Original C CLI
-├── test_bus_lines.c/h      # Original C tests
+├── main.c                  # Original CLI application
+├── test_bus_lines.c/h      # C unit/integration tests
 ├── libbus.so               # Compiled shared library
 │
-├── python_bridge/          # Management & Security Layer
-│   ├── bus_manager.py      # Python-C Bridge (ctypes)
-│   └── test_bus_final.py   # Comprehensive integration tests
+├── python_bridge/
+│   ├── bus_manager.py      # Python-C integration layer
+│   └── test_bus_final.py   # Python integration tests
 │
-├── visual/                 # Visualization Extension
-│   ├── gui_app.py          # Flask backend & Step Engine
-│   ├── templates/          # HTML5 UI
-│   └── static/             # CSS (Aesthetics) & JS (Animation)
+├── visual/
+│   ├── gui_app.py          # Flask visualization server
+│   ├── templates/          # HTML templates
+│   └── static/             # CSS & JavaScript assets
 │
-└── README.md               # Documentation
-```
-
-## iv. How to Run
-### Compilation (WSL/Linux)
-```bash
-gcc -fPIC -shared -o libbus.so sort_bus_lines.c main.c test_bus_lines.c
-```
-
-### Running the GUI Visualizer
-1. Install dependencies: `pip install flask`
-2. Run the server (inside WSL): `python3 visual/gui_app.py`
-3. Open browser: `http://127.0.0.1:5000`
-
-### Running Tests
-```bash
-cd python_bridge
-python3 test_bus_final.py
-```
-
-## v. Repository
-Git URL: https://github.com/alon-bloch/C-Python-Gap
+└── README.md
