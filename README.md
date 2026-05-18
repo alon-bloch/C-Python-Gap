@@ -35,6 +35,7 @@ Displayed execution metrics:
 comparisons
 swaps
 execution time
+
 🧠 Technical Concepts Demonstrated
 Low-level memory management
 Pointer arithmetic
@@ -44,6 +45,7 @@ Backend development with Flask
 Automated testing
 Algorithm visualization
 Input validation and defensive programming
+
 🛠️ Technologies Used
 Technology	Purpose
 C	Core sorting engine
@@ -52,6 +54,7 @@ Flask	Web visualization backend
 ctypes	Python-C bridge
 HTML/CSS/JavaScript	Interactive frontend
 GCC	Shared library compilation
+
 📁 Project Structure
 .
 ├── sort_bus_lines.c/h      # Core C sorting logic
