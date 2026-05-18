@@ -68,6 +68,7 @@ GCC	Shared library compilation
 ├── libbus.so               # Compiled shared library
 
 │
+
 ├── python_bridge/
 
 │   ├── bus_manager.py      # Python-C integration layer
@@ -75,6 +76,7 @@ GCC	Shared library compilation
 │   └── test_bus_final.py   # Python integration tests
 
 │
+
 ├── visual/
 
 │   ├── gui_app.py          # Flask visualization server
